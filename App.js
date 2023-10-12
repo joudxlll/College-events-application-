@@ -5,71 +5,57 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/homepage';
 import ProfilePage from './screens/profilepage';
 import MyEventPage from './screens/myeventpage';
+import TemplatePage from './screens/templatepage';
+
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons';
 
 
-function MyEventStackPage() {
-  return (
-    <MyEventStack.Navigator>
-      <MyEventStack.Screen name="My Events" component={MyEventPage} />
-    </MyEventStack.Navigator>
-  );
-}
-
-function ProfileStackPage() {
-  return (
-    <ProfileStack.Navigator>
-      <ProfileStack.Screen name="Profile Page" component={ProfilePage} />
-    </ProfileStack.Navigator>
-  );
-}
-
 const Tab = createBottomTabNavigator();
-const HomeStack = createNativeStackNavigator();
-const MyEventStack = createNativeStackNavigator();
-const ProfileStack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
-
-function HomeStackPage() {
+function MyTabs() {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
-    </HomeStack.Navigator>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Profile') {
+            iconName = 'user';
+
+          } else if (route.name === 'Home') {
+            iconName = 'home';
+          } else if (route.name === 'My Events') {
+            iconName = 'calendar'; // Use the 'calendar' icon for My Events tab
+          }
+
+          return <AntDesign name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: 'tomato',
+        tabBarInactiveTintColor: 'gray',
+        headerShown: true
+      })}
+    >       
+      <Tab.Screen name="Profile" component={ProfilePage} />
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="My Events" component={MyEventPage} />
+    </Tab.Navigator>
   );
 }
-
 
 export default function App() {
   return (
-<NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Screen name="home" component={MyTabs}/>
 
-<Tab.Navigator
-  screenOptions={({ route }) => ({
-    tabBarIcon: ({ focused, color, size }) => {
-      let iconName;
+        <Stack.Screen name="Home" component={HomeScreen}  />
+        <Stack.Screen name="Profile" component={ProfilePage} />
+        <Stack.Screen name="My Events" component={MyEventPage} />
+        <Stack.Screen name="Template" component={TemplatePage} />
 
-      if (route.name === 'profile') {
-        iconName = 'user';
-
-      } else if (route.name === 'Home') {
-        iconName = 'home';
-      } else if (route.name === 'My Events') {
-        iconName = 'calendar'; // Use the 'calendar' icon for My Events tab
-      }
-
-      return <AntDesign name={iconName} size={size} color={color} />;
-    },
-    tabBarActiveTintColor: 'tomato',
-    tabBarInactiveTintColor: 'gray',
-    headerShown: false
-  })}
->       
-        <Tab.Screen name="profile" component={ProfileStackPage} />
-        <Tab.Screen name="Home" component={HomeStackPage} />
-        <Tab.Screen name="My Events" component={MyEventStackPage} />
-      </Tab.Navigator>
-      
-</NavigationContainer>
+      </Stack.Navigator>   
+    </NavigationContainer>
   );
 }
