@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, ScrollView, RefreshControl, StyleSheet,Button } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const eventData = [
-  { id: 1, title: 'Noo Event Added' },
+  { id: 1, title: 'No Event Added' },
   { id: 2, title: 'No Event Added' },
   { id: 3, title: 'No Event Added' },
   { id: 4, title: 'No Event Added' },
