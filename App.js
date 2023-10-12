@@ -5,7 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/homepage';
 import ProfilePage from './screens/profilepage';
 import MyEventPage from './screens/myeventpage';
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { AntDesign } from '@expo/vector-icons';
 
 
 function MyEventStackPage() {
@@ -43,7 +44,27 @@ export default function App() {
   return (
 <NavigationContainer>
 
-      <Tab.Navigator screenOptions={{ headerShown: false }}>
+<Tab.Navigator
+  screenOptions={({ route }) => ({
+    tabBarIcon: ({ focused, color, size }) => {
+      let iconName;
+
+      if (route.name === 'profile') {
+        iconName = 'user';
+
+      } else if (route.name === 'Home') {
+        iconName = 'home';
+      } else if (route.name === 'My Events') {
+        iconName = 'calendar'; // Use the 'calendar' icon for My Events tab
+      }
+
+      return <AntDesign name={iconName} size={size} color={color} />;
+    },
+    tabBarActiveTintColor: 'tomato',
+    tabBarInactiveTintColor: 'gray',
+    headerShown: false
+  })}
+>       
         <Tab.Screen name="profile" component={ProfileStackPage} />
         <Tab.Screen name="Home" component={HomeStackPage} />
         <Tab.Screen name="My Events" component={MyEventStackPage} />
