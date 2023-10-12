@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, ScrollView, RefreshControl, StyleSheet } from 'react-native';
+import { View, Text, FlatList, ScrollView, RefreshControl, StyleSheet,Button } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const eventData = [
-  { id: 1, title: 'No Event Added' },
+  { id: 1, title: 'Noo Event Added' },
   { id: 2, title: 'No Event Added' },
   { id: 3, title: 'No Event Added' },
   { id: 4, title: 'No Event Added' },
@@ -44,7 +44,7 @@ function CurrentEventsScreen() {
   );
 }
 
-function PastEventsScreen() {
+function PastEventsScreen({ navigation }) {
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = () => {
@@ -62,6 +62,12 @@ function PastEventsScreen() {
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }
     >
+
+       <Button
+        style={styles.box}
+        title="Go to Template"
+        onPress={() => navigation.navigate('Template')}
+      />
       <FlatList
         data={eventData}
         keyExtractor={(item) => item.id.toString()}
@@ -71,6 +77,7 @@ function PastEventsScreen() {
           </View>
         )}
       />
+     
     </ScrollView>
   );
 }
@@ -106,6 +113,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     padding: 10,
+  },
+  box: {
+    width: '80%',
+    borderWidth: 1,
+    borderColor: 'black',
+    borderRadius: 8,
+    padding: 16,
+    marginTop: 16,
   },
   itemContainer: {
     borderWidth: 1,
