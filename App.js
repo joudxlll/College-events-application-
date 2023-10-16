@@ -7,7 +7,6 @@ import ProfilePage from './screens/profilepage';
 import MyEventPage from './screens/myeventpage';
 import TemplatePage from './screens/templatepage';
 
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons';
 import EventDescription from './screens/EventDescription';
 
