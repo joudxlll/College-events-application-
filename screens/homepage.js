@@ -27,14 +27,14 @@ function HomeScreen({ navigation }) {
       >
         <View
           style={{
-            flexDirection: 'row', alignItems: 'center', width: '90%',
+            flexDirection: 'row', alignItems: 'center', width: '80%',
             height: 48,
           }}
         >
           <View
             style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', alignContent: 'center', backgroundColor: 'white', borderRadius: 10, padding: 10, height: 48 }}
           >
-            <Feather name="search" size={24} color="black" />
+            <Feather name="search" size={24} color="gray" />
             <TextInput
               placeholder='Search'
               style={{
@@ -60,7 +60,7 @@ function HomeScreen({ navigation }) {
               >
                 <Feather
                   disabled
-                  name="x" size={24} color="black" />
+                  name="x" size={24} color="gray" />
               </TouchableOpacity>
             }
           </View>
