@@ -22,7 +22,7 @@ const EventCard = ({ event }) => {
             >
                 <View
                     style={{ flexDirection: 'row', alignItems: 'center', }}>
-                    <Feather name="calendar" size={10} color="black" />
+                    <Feather name="calendar" size={10} color="gray" />
                     <Text
                         style={{ marginLeft: 2, fontSize: 10 }}>
                         {event.date}</Text>
@@ -30,13 +30,13 @@ const EventCard = ({ event }) => {
                 <View
                     style={{ flexDirection: 'row', alignItems: 'center', }}
                 >
-                    <Feather name="clock" size={10} color="black" />
+                    <Feather name="clock" size={10} color="gray" />
                     <Text
-                        style={{ marginLeft: 2, fontSize: 10 }}>
+                        style={{ marginLeft: 2, fontSize: 10 ,color:"gray"}}>
                         {event.time}</Text>
                 </View>
             </View>
-            <Text>{event.title}</Text>
+            <Text  style={{ marginLeft: 2, fontSize: 10 ,color:"gray"}} >{event.title}</Text>
         </TouchableOpacity>
     )
 }
