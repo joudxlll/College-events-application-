@@ -10,13 +10,10 @@ import MyEventPage from './screens/myeventpage';
 import TemplatePage from './screens/templatepage';
 import JoinUsPage from './screens/joinus';
 import AboutUsPage from './screens/aboutus';
-
-// Add
 import SignUp from './screens/SignUp';
 import LogIn from './screens/LogIn';
 import ResetPasswordScreen from './screens/ResetPasswordScreen';
 
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons';
 import EventDescription from './screens/EventDescription';
 
@@ -42,28 +39,28 @@ function MyTabs() {
 
           return <AntDesign name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray',
+        tabBarActiveTintColor: '#E5D283',
+        tabBarInactiveTintColor: '#213555',
         headerShown: true
       })}
     >
-      <Tab.Screen name="Profile" component={ProfilePage} />
-      <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
-      <Tab.Screen name="My Events" component={MyEventPage} />
+      <Tab.Screen name="Profile" component={ProfilePage} options={{tabBarStyle: { backgroundColor: '#4F709C' } }}/>
+      <Tab.Screen name="Home" component={HomeScreen} options={{tabBarStyle: { backgroundColor: '#4F709C' } }}/>
+      <Tab.Screen name="My Events" component={MyEventPage} options={{ tabBarBadge: 1, tabBarStyle: { backgroundColor: '#4F709C' }, headerShown: false }} />
     </Tab.Navigator>
   );
 }
 
 function MyDrawer(){
   return (
-    <Drawer.Navigator initialRouteName='Dashboard'>
+    // <Drawer.Navigator  screenOptions={ {drawerStyle:{ backgroundColor: '#4F709C'}}}>
+    <Drawer.Navigator>
       <Drawer.Screen name="Home" component={MyTabs}  />
       <Drawer.Screen name="Join Us" component={JoinUsPage} />
       <Drawer.Screen name="About Us" component={AboutUsPage} />
+      {/* <Drawer.Screen name="Sign Up" component={SignUp} />
+      <Drawer.Screen name="Log In" component={LogIn} /> */}
 
-       {/* Add  */}
-      <Drawer.Screen name="Sign Up" component={SignUp} />
-      <Drawer.Screen name="Log In" component={LogIn} />
     </Drawer.Navigator>
   )
 }
@@ -80,8 +77,6 @@ export default function App() {
         <Stack.Screen name="EventDescription" component={EventDescription} options={{ headerShown: true }} />
         <Stack.Screen name="About Us" component={AboutUsPage} options={{ headerShown: true }} />
         <Stack.Screen name="Join Us" component={JoinUsPage} options={{ headerShown: true }} />
-
-         {/* Add */}
         <Stack.Screen name="Sign Up" component={SignUp} options={{ headerShown: true }} />
         <Stack.Screen name="Log In" component={LogIn} options={{ headerShown: true }} />
       </Stack.Navigator>
