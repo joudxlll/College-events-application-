@@ -17,11 +17,9 @@ const CategoryComponent = ({
             }}
             style={{
                 backgroundColor: selectedCategory === item ? "lightblue" : "white",
-                // borderWidth: selectedCategory === item ? 1 : 0,
-                // borderColor: selectedCategory === item ? "gray" : "gray",
                 padding: 10,
                 height: 50,
-                margin: 10,
+                margin: 5,
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: 10,
