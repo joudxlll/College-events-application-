@@ -10,37 +10,79 @@ const EventCard = ({ event }) => {
     return (
         <TouchableOpacity
             onPress={() => navigation.navigate('EventDescription', { event })}
-            style={{ width: width / 2 - 20, height: 150, backgroundColor: 'white', borderRadius: 10, overflow: 'hidden', margin: 5 }}
-        >
+            style={{width: width / 2 - 25,height: 110, 
+            backgroundColor: 'white',borderRadius: 10,
+            overflow: 'hidden', margin: 5}}   >
             <Image
                 resizeMode='contain'
                 source={{ uri: event.photo }}
-                style={{ width: '100%', height: '50%' }}
+                style={styles.imagestyle}
             />
             <View
-                style={{ backgroundColor: '#EEE', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 5 }}
+                style={styles.view}
             >
                 <View
-                    style={{ flexDirection: 'row', alignItems: 'center', }}>
-                    <Feather name="calendar" size={10} color="gray" />
+                    style={styles.viewicon}>
+                    <Feather name="calendar" size={10} color="black" />
                     <Text
-                        style={{ marginLeft: 2, fontSize: 10 }}>
+                        style={styles.texticons}> 
                         {event.date}</Text>
                 </View>
                 <View
-                    style={{ flexDirection: 'row', alignItems: 'center', }}
+                    style={styles.viewicon}
                 >
-                    <Feather name="clock" size={10} color="gray" />
+                    <Feather name="clock" size={10} color="black" />
                     <Text
-                        style={{ marginLeft: 2, fontSize: 10 ,color:"gray"}}>
+                        style={styles.texticons}>
                         {event.time}</Text>
                 </View>
             </View>
-            <Text  style={{ marginLeft: 2, fontSize: 10 ,color:"gray"}} >{event.title}</Text>
+            <Text  style={styles.textStyle} >{event.title}</Text>
         </TouchableOpacity>
     )
 }
 
 export default EventCard
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  imagestyle:{
+    width: '100%', 
+    height: '50%' ,
+   },
+    textStyle: {
+      color: 'black',
+      fontSize: 14,
+      fontWeight: 'bold',
+      marginLeft: 2,
+      marginTop:5,
+      justifyContent: 'center',
+    },
+    texticons: {
+        color: 'gray',
+        fontSize: 10,
+        marginLeft: 2, 
+      },
+      viewicon:{
+        flexDirection: 'row',
+       alignItems: 'center', 
+      },
+    input: {
+      width: '80%',
+      height: 40,
+      borderColor: 'gray',
+      borderWidth: 1,
+      paddingHorizontal: 10,
+      marginTop: 10,
+    },
+    view:{
+     backgroundColor: '#EEE',
+     flexDirection: 'row', 
+     justifyContent: 'space-between',
+     alignItems: 'center',
+     padding: 5 ,
+    
+
+  }}
+  );
+  
+  
