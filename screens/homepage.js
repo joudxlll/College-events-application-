@@ -4,12 +4,11 @@ import { categories, eventData } from '../src/data';
 import EventCard from '../src/components/EventCard';
 import CategoryComponent from '../src/components/CategoryComponent';
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
+
 function HomeScreen({ navigation }) {
   const [myFilteredData, setMyFilteredData] = useState(eventData);
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  // listen to selectedCategory state and refilter the FlatList data
-  // based on the selected category
   useEffect(() => {
     if (selectedCategory !== "") {
       setMyFilteredData(eventData.filter(item => item.category === selectedCategory));
@@ -23,18 +22,18 @@ function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, marginBottom: 80 }}>
       <View
-        style={{ marginTop: 20, justifyContent: 'center', alignItems: 'center', alignContent: 'center', }}
+        style={{ marginTop: 20, justifyContent: 'center', alignItems: 'defulte', alignContent: 'defulte', }}
       >
         <View
           style={{
-            flexDirection: 'row', alignItems: 'center', width: '90%',
+            flexDirection: 'row', alignItems: 'center', width: '80%',
             height: 48,
           }}
         >
           <View
-            style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', alignContent: 'center', backgroundColor: 'white', borderRadius: 10, padding: 10, height: 48 }}
+            style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', alignContent: 'center', backgroundColor: 'white', borderRadius: 10, padding: 10, height: 48 ,minWidth:360}}
           >
-            <Feather name="search" size={24} color="black" />
+            <Feather name="search" size={24} color="gray" />
             <TextInput
               placeholder='Search'
               style={{
@@ -60,12 +59,12 @@ function HomeScreen({ navigation }) {
               >
                 <Feather
                   disabled
-                  name="x" size={24} color="black" />
+                  name="x" size={24} color="gray" />
               </TouchableOpacity>
             }
           </View>
           <TouchableOpacity
-            style={{ marginLeft: 10, flexDirection: 'row', alignItems: 'center', alignContent: 'center', backgroundColor: 'lightblue', borderRadius: 10, padding: 10, height: 48 }}
+            style={{ marginLeft: 10, flexDirection: 'row', alignItems: 'defulte', alignContent: 'defulte', backgroundColor: 'lightblue', borderRadius: 10, padding: 10,height: 48}}
             onPress={() => {
               setMyFilteredData(myFilteredData.sort((a, b) => {
                 if (sortState) {
