@@ -27,10 +27,14 @@ const AdminCategoryComponent = ({
                         backgroundColor: selectedCategory === "" ? "lightblue" : "white",
                         padding: 10,
                         height: 50,
-                        margin: 10,
+                        margin: 5,
                         justifyContent: "center",
                         alignItems: "center",
+                        alignContent: 'center',
                         borderRadius: 10,
+                        top: 0,   
+                        left: 70,
+                        right:80,
                     }}
                 >
                     <Text
@@ -47,10 +51,14 @@ const AdminCategoryComponent = ({
                         backgroundColor: selectedCategory === item ? "lightblue" : "white",
                         padding: 10,
                         height: 50,
-                        margin: 10,
+                        margin: 5,
                         justifyContent: "center",
                         alignItems: "center",
+                        alignContent: 'center',
                         borderRadius: 10,
+                        top: 0,   
+                        left: 70,
+                        right:80,
                     }}
                 >
                     <Text
