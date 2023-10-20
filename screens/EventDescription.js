@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Image, Text, ScrollView } from 'react-native';
+import { View, Image, Text, ScrollView ,StyleSheet} from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 const EventDescription = ({ navigation, route }) => {
@@ -13,42 +13,85 @@ const EventDescription = ({ navigation, route }) => {
     <ScrollView>
       <Image
         resizeMode='contain'
-        source={{ uri: event.photo }} style={{ width: '100%', height: 100 }} />
-      <View
-        style={{ backgroundColor: 'white', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 5 }}
-      >
+        source={{ uri: event.photo }} style={styles.imagestyle} />
+      <View style={styles.view} >
         <View
-          style={{ flexDirection: 'row', alignItems: 'center', }}>
+          style={styles.viewicon}>
           <Feather name="calendar" size={14} color="black" />
           <Text
-            style={{ marginLeft: 2, fontSize: 14 }}>
+            style={styles.texticons}>
             {event.date}</Text>
         </View>
         <View
-          style={{ flexDirection: 'row', alignItems: 'center', }}
-        >
+          style={styles.viewicon}  >
           <Feather name="clock" size={14} color="black" />
           <Text
-            style={{ marginLeft: 2, fontSize: 14 }}>
+            style={styles.texticons}>
             {event.time}</Text>
         </View>
         <View
-          style={{ flexDirection: 'row', alignItems: 'center', }}
+          style={styles.viewicon}
         >
           <Feather name="map-pin" size={14} color="black" />
           <Text
-            style={{ marginLeft: 2, fontSize: 14 }}
-          >
+            style={styles.texticons} >
             {event.location}
           </Text>
         </View>
 
       </View>
-      <View style={{ marginTop: 20, marginLeft: 12 }}>
-        <Text style={{ fontSize: 22 }}>{event.description}</Text>
+      <View style={styles.viewdescription}>
+        <Text style={styles.texticons}>{event.description}</Text>
       </View>
     </ScrollView>
   );
 };
 
 export default EventDescription;
+const styles = StyleSheet.create({
+  imagestyle:{
+    width: '100%', 
+    height: 100 ,
+   },
+    textStyle: {
+      color: 'black',
+      fontSize: 14,
+      fontWeight: 'bold',
+      marginLeft: 2,
+      marginTop:5,
+      justifyContent: 'center',
+    },
+    texticons: {
+        color: 'black',
+        fontSize: 14,
+        marginLeft: 2, 
+      },
+    
+      viewicon:{
+        flexDirection: 'row',
+       alignItems: 'center', 
+      },
+
+    input: {
+      width: '80%',
+      height: 40,
+      borderColor: 'gray',
+      borderWidth: 1,
+      paddingHorizontal: 10,
+      marginTop: 10,
+    },
+    view:{
+     backgroundColor: 'white',
+     flexDirection: 'row', 
+     justifyContent: 'space-between',
+     alignItems: 'center',
+     padding: 5 ,
+    
+  },
+  viewdescription:{
+     marginTop: 40,
+    marginLeft: 12 
+    }
+}
+  );
+  
