@@ -70,7 +70,7 @@ export default function App() {
         <Stack.Screen name="Template" component={TemplatePage} options={{ headerShown: true }} />
         <Stack.Screen name="EventDescription" component={EventDescription} options={{ headerShown: true }} />
         <Stack.Screen name="About Us" component={AboutUsPage} options={{ headerShown: true }} />
-        <Stack.Screen name="Join Us" component={JoinUsPage} options={{ headerShown: true }} />
+        <Stack.Screen name="Joi nUs" component={JoinUsPage} options={{ headerShown: true }} />
       </Stack.Navigator>
     </NavigationContainer>
     
