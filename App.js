@@ -11,6 +11,11 @@ import TemplatePage from './screens/templatepage';
 import JoinUsPage from './screens/joinus';
 import AboutUsPage from './screens/aboutus';
 
+// Add
+import SignUp from './screens/SignUp';
+import LogIn from './screens/LogIn';
+import ResetPasswordScreen from './screens/ResetPasswordScreen';
+
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons';
 import EventDescription from './screens/EventDescription';
@@ -55,6 +60,10 @@ function MyDrawer(){
       <Drawer.Screen name="Home" component={MyTabs}  />
       <Drawer.Screen name="Join Us" component={JoinUsPage} />
       <Drawer.Screen name="About Us" component={AboutUsPage} />
+
+       {/* Add  */}
+      <Drawer.Screen name="Sign Up" component={SignUp} />
+      <Drawer.Screen name="Log In" component={LogIn} />
     </Drawer.Navigator>
   )
 }
@@ -70,7 +79,11 @@ export default function App() {
         <Stack.Screen name="Template" component={TemplatePage} options={{ headerShown: true }} />
         <Stack.Screen name="EventDescription" component={EventDescription} options={{ headerShown: true }} />
         <Stack.Screen name="About Us" component={AboutUsPage} options={{ headerShown: true }} />
-        <Stack.Screen name="Joi nUs" component={JoinUsPage} options={{ headerShown: true }} />
+        <Stack.Screen name="Join Us" component={JoinUsPage} options={{ headerShown: true }} />
+
+         {/* Add */}
+        <Stack.Screen name="Sign Up" component={SignUp} options={{ headerShown: true }} />
+        <Stack.Screen name="Log In" component={LogIn} options={{ headerShown: true }} />
       </Stack.Navigator>
     </NavigationContainer>
     
