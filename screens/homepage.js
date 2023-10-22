@@ -64,7 +64,7 @@ function HomeScreen({ navigation }) {
             }
           </View>
           <TouchableOpacity
-            style={{ marginLeft: 10, flexDirection: 'row', alignItems: 'defulte', alignContent: 'defulte', backgroundColor: 'lightblue', borderRadius: 10, padding: 10,height: 48}}
+            style={{ marginLeft: 10, flexDirection: 'row', alignItems: 'defulte', alignContent: 'defulte', backgroundColor: '#C5DFF8', borderRadius: 10, padding: 10,height: 48}}
             onPress={() => {
               setMyFilteredData(myFilteredData.sort((a, b) => {
                 if (sortState) {
