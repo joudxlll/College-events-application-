@@ -1,10 +1,10 @@
 # College events application
 
 # Team Members
-1- **joud Alrumayh**
+1- **Joud Alrumayh**
 
-2- **Shaden**
+2- **Shaden Almashouq**
 
-3- **Atheer**
+3- **Atheer Alshareef**
 
-4- **Nada**
+4- **Nada Alkkharji**
